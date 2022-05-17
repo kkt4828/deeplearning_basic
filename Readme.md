@@ -5,6 +5,7 @@
 - 코드구현 업로드 중심
 - 내용 정리는 노션 링크 참고
 ## 퍼셉트론
+Notion - https://dreamkkt.notion.site/e7591c88b8d642ccb2e2d34522f10887
 1. 퍼셉트론이란?
 2. AND 게이트, NAND 게이트, OR 게이트
 3. 퍼셉트론 구현하기
