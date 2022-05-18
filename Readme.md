@@ -17,3 +17,11 @@ Notion - https://dreamkkt.notion.site/e7591c88b8d642ccb2e2d34522f10887
    1. 기존 게이트 조합
    2. 구현
 6. NAND => 컴퓨터까지
+## 신경망
+Notion - https://dreamkkt.notion.site/a5a934821df64ef1a59a62dc09b92192
+1. 퍼셉트론 => 신경망
+2. 활성화 함수 (Acitivation Function)
+3. 다차원 배열의 계산
+4. 3-Layer 신경망
+5. Output Layer 설계
+6. MNIST 데이터셋 실습
