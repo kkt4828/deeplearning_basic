@@ -25,3 +25,10 @@ Notion - https://dreamkkt.notion.site/a5a934821df64ef1a59a62dc09b92192
 4. 3-Layer 신경망
 5. Output Layer 설계
 6. MNIST 데이터셋 실습
+## 신경망 학습
+Notion - https://dreamkkt.notion.site/Training-9793a03d854d46d698d5c5cf2d281c54
+1. 학습 데이터
+2. Loss Function
+3. 수치 미분
+4. Gradient Descent
+5. 알고리즘 구현
