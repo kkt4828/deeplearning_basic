@@ -35,21 +35,33 @@ def init_network(k_list, n_features):
 
     return network
 
-def mlp(x, network, n_layers):
+# batch 추가
+def mlp(x, y, network, n_layers, batch_size = 32):
+    accuracy_cnt = 0
+    for j in range(0, len(x), batch_size):
+        if j+batch_size >= len(x):
+            x_batch = x[j:]
+        else:
+            x_batch = x[j:j + batch_size]
 
-    for i in range(n_layers):
-        x = np.dot(x, network[f'w{i}']) + network[f'b{i}']
-        if i != n_layers - 1:
-            x = Sigmoid(x)
+        for i in range(n_layers):
+            x_batch = np.dot(x_batch, network[f'w{i}']) + network[f'b{i}']
+            if i != n_layers - 1:
+                x_batch = Sigmoid(x_batch)
 
-    out = Softmax(x)
-    out = np.argmax(out, axis = 1)
-    return out
+        out = Softmax(x_batch)
+        out = np.argmax(out, axis = 1)
+        if j + batch_size >= len(x):
+            accuracy_cnt += np.sum(out == y[j:])
+        else:
+            accuracy_cnt += np.sum(out == y[j:j + batch_size])
+
+    return accuracy_cnt / len(x) * 100
 k_list = [100, 50, 10]
 n_layers = len(k_list)
 network = init_network(k_list, n_features)
-pred_y = mlp(train_X, network, n_layers)
-print(pred_y)
+accuracy = mlp(train_X, train_y, network, n_layers)
+print(f'{accuracy:.2f}%')
 
 
 
